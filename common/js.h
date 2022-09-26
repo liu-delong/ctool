@@ -3,8 +3,7 @@
 #include<chrono>
 #include<iostream>
 #include<sstream>
-#include<string> 
-#include<fstream>
+#include<string>
 using namespace std;
 class jser
 {
@@ -16,11 +15,18 @@ class jser
     {
         begin_t=chrono::high_resolution_clock::now();
     }
-    double end()
+    double end_s()
     {
         end_t=chrono::high_resolution_clock::now();
+        auto time_span_ns=end_t-begin_t;
         chrono::duration<double> time_span=chrono::duration_cast<chrono::duration<double>>(end_t-begin_t);
-        return time_span.count();
+        return time_span_ns.count();
+    }
+    long long int end_ns()
+    {
+        end_t=chrono::high_resolution_clock::now();
+        auto time_span_ns=end_t-begin_t;
+        return time_span_ns.count();
     }
 } timer;
 
