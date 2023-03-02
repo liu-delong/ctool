@@ -69,3 +69,6 @@ obj/%.o:%.cpp
 clean:
 	$(rm) *.exe $(addprefix obj$(subpath_sign),*.o *.d)
 # 创建obj文件夹，存放编译中间过程
+
+BinarySearch:BinarySearch.cpp
+	g++ BinarySearch.cpp 

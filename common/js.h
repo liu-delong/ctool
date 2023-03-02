@@ -28,7 +28,7 @@ class jser
         auto time_span_ns=end_t-begin_t;
         return time_span_ns.count();
     }
-} timer;
+};
 
 #endif // JS_H
 /**
