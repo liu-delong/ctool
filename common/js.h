@@ -20,7 +20,7 @@ class jser
         end_t=chrono::high_resolution_clock::now();
         auto time_span_ns=end_t-begin_t;
         chrono::duration<double> time_span=chrono::duration_cast<chrono::duration<double>>(end_t-begin_t);
-        return time_span_ns.count();
+        return time_span.count();
     }
     long long int end_ns()
     {
@@ -34,12 +34,13 @@ class jser
 /**
 int main()
 {
+    jser timer;
     timer.begin();
     int a;
     for(int i=0;i<100000;i++)
     {
         a++;
     }
-    cout<<timer.end();
+    cout<<timer.end_ns();
 }
 **/
