@@ -1,0 +1,12 @@
+# please copy this file to /etc/systemd/system. rename this file by serviceName.service
+[Unit]
+Description=redis-server
+After=network.target
+
+[Service]
+Type=forking
+ExecStart=/usr/local/bin/redis-server /usr/local/src/redis-6.2.6/redis.conf
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target
